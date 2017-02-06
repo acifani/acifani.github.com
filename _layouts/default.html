@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{% if page.title %}{{ page.title }} &mdash; {% endif %}Alessandro Cifani</title>
+
+    {% if page.description %}
+        <meta name="description" content="{{ page.description }}">
+    {% else %}
+        <meta name="description" content="{{ site.description }}">
+    {% endif %}
+    {% if page.author %}
+        <meta name="author" content="{{ page.author }}">
+    {% else %}
+        <meta name="author" content="{{ site.author }}">
+    {% endif %}
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/normalize.css">
+</head>
+
+<body>
+    <header>
+        <h1><a href="/">Alessandro Cifani</a></h1>
+        <ul>
+            <li><a href="#">projects</a></li>
+            <li><a href="#">about me</a></li>
+        </ul>
+    </header>
+
+    {{ content }}
+
+    <footer>
+        Made by &copy; Alessandro Cifani. Source code on <a href="https://github.com/ceeph/ceeph.github.com">GitHub</a>.
+    </footer>
+</body>
+</html>
