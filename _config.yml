@@ -4,7 +4,7 @@ description: Personal website and blog
 author: Alessandro Cifani
 email: alessandro.cifani@gmail.com
 
-baseurl: / 
+baseurl: /
 permalink: /:year/:month/:title
 paginate: 10
 markdown: kramdown
@@ -16,3 +16,4 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - vendor/
+  - scripts/
