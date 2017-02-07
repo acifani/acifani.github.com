@@ -4,9 +4,9 @@ layout: default
 <div class="posts">
     {% for post in site.posts limit:5 %}
         <a href="{{ post.url }}">
-            <h3>{{ post.title }}</h3>
+            <h1>{{ post.title }}</h1>
             <span class="published">{{ post.date | date_to_string }}</span>
-            <p>{{ post.excerpt | strip_html }}</p>
+            <p class="excerpt">{{ post.excerpt | strip_html }}</p>
         </a>
         <div class="separator"></div>
     {% endfor %}
