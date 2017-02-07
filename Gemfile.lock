@@ -209,11 +209,8 @@ PLATFORMS
 DEPENDENCIES
   github-pages
   html-proofer
-  jekyll-feed (~> 0.6)
+  jekyll-feed
   jekyll-paginate
-
-RUBY VERSION
-   ruby 2.3.3p222
 
 BUNDLED WITH
    1.14.3
