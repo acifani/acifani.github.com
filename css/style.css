@@ -88,21 +88,3 @@ header h1 {
 .posts a:hover {
     color: black;
 }
-
-.posts a h1 {
-    display: inline;
-    font-weight: 300;
-    border-bottom: 1px dotted;
-}
-
-.posts a:hover h1 {
-    border-bottom-style: solid;
-}
-
-.posts span {
-    color: #aaa;
-}
-
-.posts p {
-    margin-top: 20px;
-}

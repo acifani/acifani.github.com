@@ -1,6 +1,25 @@
 ---
 layout: default
 ---
+<style type="text/css">
+    .posts a h1 {
+        display: inline;
+        font-weight: 300;
+        border-bottom: 1px dotted;
+    }
+
+    .posts a:hover h1 {
+        border-bottom-style: solid;
+    }
+
+    .posts span {
+        color: #aaa;
+    }
+
+    .posts p {
+        margin-top: 20px;
+    }
+</style>
 <div class="posts">
     {% for post in site.posts limit:5 %}
         <a href="{{ post.url }}">
