@@ -11,6 +11,7 @@ body {
 
 footer {
     font-family: 'Lato', sans-serif;
+    margin: -20px 0 40px 0;
 }
 
 .container {
@@ -49,9 +50,13 @@ header {
 }
 
 header h1 {
+    float: left;
+    background: #f22613;
+    font-family: 'Inconsolata', monospace;
     font-size: 28px;
     font-weight: 500;
-    float: left;
+    color: #fff;
+    padding: 0 2px 0 2px;
 }
 
 .nav {
