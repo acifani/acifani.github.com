@@ -3,7 +3,7 @@
 body {
     font-size: 1.5em;
     line-height: 1.5;
-    color: #555;
+    color: #404040;
     background: #fff;
     font-smoothing: subpixel-antialiased;
     -webkit-font-smoothing: subpixel-antialiased;
@@ -43,6 +43,17 @@ a:hover {
     color: inherit;
 }
 
+.underline {
+    border-bottom: 1px dotted;
+    opacity: 0.8;
+}
+
+.underline:hover{
+    color: black;
+    border-bottom-style: solid;
+}
+
+
 header {
     margin-top: 40px;
     font-family: 'Lato', sans-serif;
@@ -74,20 +85,24 @@ header h1 {
     opacity: 1;
 }
 
-.posts a h1 {
-    display: inline;
-    font-weight: 300;
-}
-
-.posts a span {
-    opacity: 0.5;
-}
-
-.posts a p {
-    margin-top: 20px;
-}
-
 .posts a:hover {
     color: black;
 }
 
+.posts a h1 {
+    display: inline;
+    font-weight: 300;
+    border-bottom: 1px dotted;
+}
+
+.posts a:hover h1 {
+    border-bottom-style: solid;
+}
+
+.posts span {
+    color: #aaa;
+}
+
+.posts p {
+    margin-top: 20px;
+}
