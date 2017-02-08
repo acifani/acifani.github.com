@@ -53,7 +53,6 @@ a:hover {
     border-bottom-style: solid;
 }
 
-
 header {
     margin-top: 40px;
     font-family: 'Lato', sans-serif;
@@ -83,8 +82,4 @@ header h1 {
 
 .nav li:hover {
     opacity: 1;
-}
-
-.posts a:hover {
-    color: black;
 }
