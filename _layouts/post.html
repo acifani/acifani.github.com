@@ -1,8 +1,28 @@
 ---
 layout: default
 ---
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Noto+Serif:400,400i,700');
+
+    .post h1 {
+        font-size: 3em;
+    }
+
+    .post p {
+        font-family: 'Noto Serif', serif;
+        font-weight: 400;
+        font-size: 1.2em;
+        opacity: 0.97;
+    }
+
+    .post .published {
+        margin-bottom: 10px;
+        opacity: 0.5;
+        font-size: 1.2em;
+    }
+</style>
 <div class="post">
     <h1>{{ page.title }}</h1>
-    <span class="published">{{ page.date | date_to_string }}</span>
+    <div class="published">{{ page.date | date_to_string }}</div>
     <div class="body">{{ content }}</div>
 </div>
