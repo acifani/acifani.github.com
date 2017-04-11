@@ -1,0 +1,68 @@
+==================================================================
+https://keybase.io/alessandrocifani
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://cifani.me
+  * I am alessandrocifani (https://keybase.io/alessandrocifani) on keybase.
+  * I have a public key with fingerprint 3E21 DB3A FEB0 EDA0 2E31  8B46 9F2C 1184 2FDA 89B1
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "0101c6f010bca6ca351b23640ba91e2c523293731ef54b4dd7570d8beb984347e1560a",
+            "fingerprint": "3e21db3afeb0eda02e318b469f2c11842fda89b1",
+            "host": "keybase.io",
+            "key_id": "9f2c11842fda89b1",
+            "kid": "0101c6f010bca6ca351b23640ba91e2c523293731ef54b4dd7570d8beb984347e1560a",
+            "uid": "b1c2cbe0c5372ab06e3c5111c4dc7319",
+            "username": "alessandrocifani"
+        },
+        "service": {
+            "hostname": "cifani.me",
+            "protocol": "https:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1491905241,
+    "expire_in": 157680000,
+    "prev": "45fc9b258adf9a75403bde5ab03352fabf74e18d84667d4ffbd860f9b7a2b6d8",
+    "seqno": 10,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.68
+Comment: https://keybase.io/crypto
+
+yMIoAnicrZJ/aE1hGMfvNYbLFi3xD9kbI6457/l97j9MrLSF5MdE7t5fZzttzrk7
+59yNGGYp2VxTw9D8aH+IzFZayebH1tSMQqFEfhUTGjKSIu+Z+c+f3n+e932e7/N5
+n+fp6c1IC0XC9O3xnKudO56Fb3c3J0NFH84/3g6wQ7eB2HZQxoYNK6fM8+NlFgUx
+IEABEtXkBhOkEiQpEIuSKgsYGZCJRBEl0ZA0CTJTkbFMqaZoAtUxw4YuS7LGoKIK
+CESBadklzE24lu1zrMRESLGETIYFRpEgMgnqWFYNUyQQ6rJoUqQbGPLEUscLMnhx
+GHks13K4jz/iw+X9Q/+f604O4zAkIsFMIIqkiQgLKpOIAiEkMiUcYgRCj7k22sK4
+GpUzz0M2dR1imci2QHUU8GilRVgw4KCjEeWfeC6/R0HCdXyHOOXcXer7CS8WpPnb
+EoGuiuH4CCGOLZvyYfKMSuZ6lmODGORK4lsBEsoGNARFlGEUsK0Jy2VxK1AomqoL
+/AT/sEqOlBWTGFhUdERNA2mKLEiYMoU3J0mKaCJsajKDOtVlVdWobJqY6qpgGlhD
+IlapDoKeKmyHsznURyWc6VklNvKTLgPVPTc2jQ6FI6H0MaOCLQtFxk/6u3uxKeNC
+DUNp9m1wpnr1ktCrwdIrFRkysKaGl+fNH1q/IjKgLB0z+UdH+FpLVn7z0XlgQcOe
+55m1H3rconX66O/72wt7I1Npm/+r5VZVwYZTcyfiH/VZLza3Tp+TmaTz647lZtfO
+aIquedz1+sSqxa1msv3uovwj2ffSf/Z8jHVc7A+l9YQb/ZpO6dOjurIJdWcH3h7b
++PBLZuuyg81vKtf2v/v8onFV3yhp1/0nFzLPf8ouSNXcKq7/Nq6t7c6mQnJgn9bf
+9LE41U1yduedeRounjlrVtXJ9x2zv6QOf321cCB1fWdX/rlDLdl9Dy6lN98kg3eE
+C6eb+sZOep7fvbfopT1t8PKbVEX7yt+FM0ZR
+=mr+O
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/alessandrocifani
+
+==================================================================
