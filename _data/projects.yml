@@ -1,0 +1,31 @@
+- name: cifani.me
+  url: https://github.com/acifani/acifani.github.com
+  descr: This website!
+
+- name: Swift Notes
+  url: https://github.com/acifani/swift-notes
+  descr: A note-taking Google Chrome extension
+
+- name: /r/italygames Play!
+  url: 'javascript:void(0)'
+  descr: '[WIP] Website to let redditors find other games to play with.'
+
+- name: csv2geojson
+  url: https://github.com/acifani/csv2geojson
+  descr: Python script to transform CSV files to GeoJson
+
+- name: Kedde_Bot
+  url: https://github.com/acifani/kedde_bot
+  descr: A simple Telegram Bot made with Python
+
+- name: PyQuiz
+  url: https://github.com/acifani/pyquiz
+  descr: Python script useful to practice basic Python syntax
+
+- name: Ateneo DataWarehouse
+  url: 'javascript:void(0)'
+  descr: '[private] DWH developed for University of Camerino'
+
+- name: Thesis Management System
+  url: 'javascript:void(0)'
+  descr: '[private] Website developed for University of Camerino'
