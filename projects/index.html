@@ -3,13 +3,18 @@ layout: default
 title: Projects
 ---
 <h1>Projects</h1>
+<style type="text/css">
+    .project a {
+        font-size: 1.1em;
+    }
+</style>
 
-<ul>
+<ul class="project">
     {% for project in site.data.projects %}
         <li>
             <a href="{{ project.url }}" class="underline">
-                {{ project.name }}
-            </a> &mdash;
+                {{ project.name }}</a>
+            &mdash;
             {{ project.descr }}
         </li>
     {% endfor %}

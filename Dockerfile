@@ -6,4 +6,4 @@ RUN apt-get update && \
 RUN chmod +x ./scripts/build.sh && \
     ./scripts/build.sh
 
-CMD ["bundle", "exec", "jekyll", "serve", "--host", "0.0.0.0"]
+CMD ["bundle", "exec", "jekyll", "serve", "--host", "0.0.0.0", "--force-polling"]

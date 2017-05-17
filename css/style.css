@@ -9,6 +9,10 @@ body {
     -webkit-font-smoothing: subpixel-antialiased;
 }
 
+ul {
+    list-style-type: none;
+}
+
 footer {
     font-family: 'Lato', sans-serif;
     margin: -20px 0 40px 0;
