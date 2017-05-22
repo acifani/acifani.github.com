@@ -8,7 +8,7 @@
 
 - name: /r/italygames Play!
   url: 'javascript:void(0)'
-  descr: '[WIP] Website to let redditors find other games to play with'
+  descr: '[WIP] Website to let redditors find other gamers to play with'
 
 - name: csv2geojson
   url: https://github.com/acifani/csv2geojson
