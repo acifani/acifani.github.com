@@ -2,13 +2,13 @@
   url: https://github.com/acifani/acifani.github.com
   descr: This website!
 
+- name: ItalyGames Play
+  url: https://play.italyga.me/
+  descr: Website to let redditors find other gamers to play with
+
 - name: Swift Notes
   url: https://github.com/acifani/swift-notes
   descr: A note-taking Google Chrome extension
-
-- name: /r/italygames Play!
-  url: 'javascript:void(0)'
-  descr: '[WIP] Website to let redditors find other gamers to play with'
 
 - name: csv2geojson
   url: https://github.com/acifani/csv2geojson
