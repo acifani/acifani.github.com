@@ -2,6 +2,10 @@
   url: https://github.com/acifani/acifani.github.com
   descr: This website!
 
+- name: Flask-SqlA2Api
+  url: https://github.com/acifani/flask-sqla2api
+  descr: Automatically generate Flask REST API from SQLAlchemy model definition
+
 - name: ItalyGames Play
   url: https://play.italyga.me/
   descr: Website to let redditors find other gamers to play with
