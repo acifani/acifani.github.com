@@ -1,239 +1,565 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Full-stack developer based in Milan. Come and have a look at a couple of my projects."
+    />
+    <title>Alessandro Cifani</title>
+    <style>
+      .title:not(:last-child) {
+        margin-bottom: 1.5rem;
+      }
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Full-stack developer based in Milan. Come and have a look at a couple of my projects.">
-  <title>Alessandro Cifani</title>
-  <link rel="stylesheet" href="/bulma-v0.8.2.css" />
-  <script type="application/ld+json">
-    {
-      "@context": "http://schema.org",
-      "@type": "Person",
-      "name": "Alessandro Cifani",
-      "url": "https://alessandrocifani.com",
-      "email": "alessandro.cifani@gmail.com",
-      "jobTitle": "Full-Stack Developer",
-      "alumniOf": "Università di Camerino",
-      "gender": "male",
-      "image": "https://www.gravatar.com/avatar/b74ceb43f57ee68b44ac1969fe5a38cc?s=500",
-      "sameAs": [
-        "https://www.facebook.com/alessandro.cifani",
-        "https://www.instagram.com/acifani_",
-        "https://www.linkedin.com/in/alessandrocifani",
-        "https://twitter.com/acifani_"
-      ]
-    }
+      body,
+      h1,
+      h3,
+      h4,
+      html,
+      p {
+        margin: 0;
+        padding: 0;
+      }
 
-  </script>
-</head>
+      h1,
+      h3,
+      h4 {
+        font-size: 100%;
+        font-weight: 400;
+      }
 
-<body>
-  <!-- hero colors: primary, info, success, warning, danger, light, dark -->
-  <section class="hero is-bold is-dark">
-    <div class="hero-body">
+      html {
+        box-sizing: border-box;
+      }
+
+      *,
+      ::after,
+      ::before {
+        box-sizing: inherit;
+      }
+
+      html {
+        background-color: #fff;
+        font-size: 16px;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+        min-width: 300px;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        text-rendering: optimizeLegibility;
+        -webkit-text-size-adjust: 100%;
+        -moz-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+      }
+
+      article,
+      section {
+        display: block;
+      }
+
+      body {
+        font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue",
+          Helvetica, Arial, sans-serif;
+      }
+
+      body {
+        color: #4a4a4a;
+        font-size: 1em;
+        font-weight: 400;
+        line-height: 1.5;
+      }
+
+      a {
+        color: #3273dc;
+        text-decoration: none;
+      }
+
+      span {
+        font-style: inherit;
+        font-weight: inherit;
+      }
+
+      .container {
+        flex-grow: 1;
+        margin: 0 auto;
+        position: relative;
+        width: auto;
+      }
+
+      @media screen and (min-width: 1024px) {
+        .container {
+          max-width: 960px;
+        }
+      }
+
+      @media screen and (min-width: 1216px) {
+        .container {
+          max-width: 1152px;
+        }
+      }
+
+      .tags {
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+      }
+
+      .tags .tag {
+        margin-bottom: 0.5rem;
+      }
+
+      .tags .tag:not(:last-child) {
+        margin-right: 0.5rem;
+      }
+
+      .tags:not(:last-child) {
+        margin-bottom: 1rem;
+      }
+
+      .tag:not(body) {
+        align-items: center;
+        background-color: #f5f5f5;
+        border-radius: 4px;
+        color: #4a4a4a;
+        display: inline-flex;
+        font-size: 0.75rem;
+        height: 2em;
+        justify-content: center;
+        line-height: 1.5;
+        padding-left: 0.75em;
+        padding-right: 0.75em;
+        white-space: nowrap;
+      }
+
+      .subtitle,
+      .title {
+        word-break: break-word;
+      }
+
+      .title {
+        color: #363636;
+        font-size: 2rem;
+        font-weight: 600;
+        line-height: 1.125;
+      }
+
+      .title:not(.is-spaced) + .subtitle {
+        margin-top: -1.25rem;
+      }
+
+      .title.is-1 {
+        font-size: 3rem;
+      }
+
+      .title.is-6 {
+        font-size: 1rem;
+      }
+
+      .subtitle {
+        color: #4a4a4a;
+        font-size: 1.25rem;
+        font-weight: 400;
+        line-height: 1.25;
+      }
+
+      .card {
+        background-color: #fff;
+        box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
+          0 0 0 1px rgba(10, 10, 10, 0.02);
+        color: #4a4a4a;
+        max-width: 100%;
+        position: relative;
+      }
+
+      .card-content {
+        background-color: transparent;
+        padding: 1.5rem;
+      }
+
+      .card-footer {
+        background-color: transparent;
+        border-top: 1px solid #ededed;
+        align-items: stretch;
+        display: flex;
+      }
+
+      .card-footer-item {
+        align-items: center;
+        display: flex;
+        flex-basis: 0;
+        flex-grow: 1;
+        flex-shrink: 0;
+        justify-content: center;
+        padding: 0.75rem;
+      }
+
+      .card-footer-item:not(:last-child) {
+        border-right: 1px solid #ededed;
+      }
+
+      .column {
+        display: block;
+        flex-basis: 0;
+        flex-grow: 1;
+        flex-shrink: 1;
+        padding: 0.75rem;
+      }
+
+      @media screen and (min-width: 769px), print {
+        .column.is-half {
+          flex: none;
+          width: 50%;
+        }
+
+        .column.is-offset-2 {
+          margin-left: 16.66667%;
+        }
+
+        .column.is-8 {
+          flex: none;
+          width: 66.66667%;
+        }
+      }
+
+      .columns {
+        margin-left: -0.75rem;
+        margin-right: -0.75rem;
+        margin-top: -0.75rem;
+      }
+
+      .columns:last-child {
+        margin-bottom: -0.75rem;
+      }
+
+      .columns.is-multiline {
+        flex-wrap: wrap;
+      }
+
+      @media screen and (min-width: 769px), print {
+        .columns:not(.is-desktop) {
+          display: flex;
+        }
+      }
+
+      @media screen and (min-width: 1024px) {
+        .columns.is-desktop {
+          display: flex;
+        }
+      }
+
+      .hero {
+        align-items: stretch;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .hero.is-dark {
+        background-color: #363636;
+        color: #fff;
+      }
+
+      .hero.is-dark .title {
+        color: #fff;
+      }
+
+      .hero.is-dark .subtitle {
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      .hero.is-dark.is-bold {
+        background-image: linear-gradient(
+          141deg,
+          #1f191a 0,
+          #363636 71%,
+          #46403f 100%
+        );
+      }
+
+      .hero-body {
+        flex-grow: 1;
+        flex-shrink: 0;
+        padding: 3rem 1.5rem;
+      }
+
+      .section {
+        padding: 3rem 1.5rem;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="/bulma-v0.8.2.01e58708.css"
+      media="print"
+      onload="this.media='all'"
+    />
+    <style>
+      section,
+      article {
+        content-visibility: auto;
+      }
+    </style>
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "Person",
+        "name": "Alessandro Cifani",
+        "url": "https://alessandrocifani.com",
+        "email": "alessandro.cifani@gmail.com",
+        "jobTitle": "Full-Stack Developer",
+        "alumniOf": "Università di Camerino",
+        "gender": "male",
+        "image": "https://www.gravatar.com/avatar/b74ceb43f57ee68b44ac1969fe5a38cc?s=500",
+        "sameAs": [
+          "https://www.facebook.com/alessandro.cifani",
+          "https://www.instagram.com/acifani_",
+          "https://www.linkedin.com/in/alessandrocifani",
+          "https://twitter.com/acifani_"
+        ]
+      }
+    </script>
+  </head>
+
+  <body>
+    <!-- hero colors: primary, info, success, warning, danger, light, dark -->
+    <section class="hero is-bold is-dark">
+      <div class="hero-body">
+        <div class="container">
+          <div class="columns is-desktop">
+            <div class="column is-offset-2">
+              <h1 class="title is-1">Hi 👋 I'm Alessandro Cifani</h1>
+              <p class="subtitle">Full-stack Developer</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
       <div class="container">
         <div class="columns is-desktop">
-          <div class="column is-offset-2">
-            <h1 class="title is-1">
-              Hi 👋 I'm Alessandro Cifani
-            </h1>
-            <p class="subtitle">
-              Full-stack Developer
+          <div class="column is-8 is-offset-2">
+            <h3 class="title">Open Source Projects</h3>
+            <div class="columns is-multiline">
+              <div class="column is-half">
+                <article class="card">
+                  <div class="card-content">
+                    <h4 class="title is-6">⚗️ Flask-SQLA2Api</h4>
+                    <div class="tags">
+                      <span class="tag">python</span>
+                      <span class="tag">flask</span>
+                      <span class="tag">rest</span>
+                      <span class="tag">library</span>
+                    </div>
+                    <p>
+                      Flask middleware that automagically generates REST APIs
+                      given a SQLAlchemy model
+                    </p>
+                  </div>
+                  <div class="card-footer">
+                    <div class="card-footer-item">
+                      <a href="https://github.com/acifani/flask-sqla2api"
+                        >GitHub</a
+                      >
+                    </div>
+                    <div class="card-footer-item">
+                      <a href="https://pypi.python.org/pypi/Flask-SQLA2api"
+                        >PyPi</a
+                      >
+                    </div>
+                  </div>
+                </article>
+              </div>
+              <div class="column is-half">
+                <article class="card">
+                  <div class="card-content">
+                    <h4 class="title is-6">⚽ soccer-go</h4>
+                    <div class="tags">
+                      <span class="tag">typescript</span>
+                      <span class="tag">nodejs</span>
+                      <span class="tag">cli</span>
+                      <span class="tag">soccer</span>
+                    </div>
+                    <p>
+                      CLI app to follow your favourite european soccer league.
+                      Teams, players, results and more
+                    </p>
+                  </div>
+                  <div class="card-footer">
+                    <div class="card-footer-item">
+                      <a href="https://github.com/acifani/soccer-go">GitHub</a>
+                    </div>
+                    <div class="card-footer-item">
+                      <a href="https://www.npmjs.com/package/soccer-go">npm</a>
+                    </div>
+                    <div class="card-footer-item">
+                      <a
+                        href="https://aur.archlinux.org/packages/nodejs-soccer-go/"
+                        >AUR</a
+                      >
+                    </div>
+                  </div>
+                </article>
+              </div>
+              <div class="column is-half">
+                <article class="card">
+                  <div class="card-content">
+                    <h4 class="title is-6">📬 update-notipy</h4>
+                    <div class="tags">
+                      <span class="tag">python</span>
+                      <span class="tag">library</span>
+                      <span class="tag">cli</span>
+                    </div>
+                    <p>
+                      Send a notification when there is an update available for
+                      your package
+                    </p>
+                  </div>
+                  <div class="card-footer">
+                    <div class="card-footer-item">
+                      <a href="https://github.com/acifani/update-notipy"
+                        >GitHub</a
+                      >
+                    </div>
+                    <div class="card-footer-item">
+                      <a href="https://pypi.org/project/update-notipy/">PyPi</a>
+                    </div>
+                  </div>
+                </article>
+              </div>
+              <div class="column is-half">
+                <article class="card">
+                  <div class="card-content">
+                    <h4 class="title is-6">🚌 aspettami-bot</h4>
+                    <div class="tags">
+                      <span class="tag">python</span>
+                      <span class="tag">bot</span>
+                      <span class="tag">telegram</span>
+                      <span class="tag">transportation</span>
+                    </div>
+                    <p>
+                      Telegram bot to fetch real-time status and wait time of
+                      Milan's ATM bus and tram lines
+                    </p>
+                  </div>
+                  <div class="card-footer">
+                    <div class="card-footer-item">
+                      <a href="https://github.com/acifani/aspettami-bot"
+                        >GitHub</a
+                      >
+                    </div>
+                    <div class="card-footer-item">
+                      <a href="https://t.me/aspettaMI_bot">Telegram</a>
+                    </div>
+                  </div>
+                </article>
+              </div>
+              <div class="column is-half">
+                <article class="card">
+                  <div class="card-content">
+                    <h4 class="title is-6">💱 node-currency-converter</h4>
+                    <div class="tags">
+                      <span class="tag">typescript</span>
+                      <span class="tag">nodejs</span>
+                      <span class="tag">currency</span>
+                      <span class="tag">docker</span>
+                    </div>
+                    <p>Node server for currency conversion</p>
+                  </div>
+                  <div class="card-footer">
+                    <div class="card-footer-item">
+                      <a
+                        href="https://github.com/acifani/node-currency-converter"
+                        >GitHub</a
+                      >
+                    </div>
+                    <div class="card-footer-item">
+                      <a
+                        href="https://node-currency-converter.herokuapp.com/convert?amount=120&src_currency=EUR&dest_currency=USD"
+                        >Demo</a
+                      >
+                    </div>
+                  </div>
+                </article>
+              </div>
+              <div class="column is-half">
+                <article class="card">
+                  <div class="card-content">
+                    <h4 class="title is-6">🥒 cetriolino</h4>
+                    <div class="tags">
+                      <span class="tag">typescript</span>
+                      <span class="tag">library</span>
+                      <span class="tag">key-value</span>
+                      <span class="tag">storage</span>
+                    </div>
+                    <p>Simple key-value storage</p>
+                  </div>
+                  <div class="card-footer">
+                    <div class="card-footer-item">
+                      <a href="https://github.com/acifani/cetriolino">GitHub</a>
+                    </div>
+                    <div class="card-footer-item">
+                      <a href="https://www.npmjs.com/package/cetriolino">npm</a>
+                    </div>
+                    <div class="card-footer-item">
+                      <a href="https://alessandrocifani.com/cetriolino/"
+                        >Docs</a
+                      >
+                    </div>
+                  </div>
+                </article>
+              </div>
+              <div class="column is-full">
+                <p>
+                  More projects available on my
+                  <a href="https://github.com/acifani?tab=repositories"
+                    >GitHub</a
+                  >
+                  profile.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="columns is-desktop">
+          <div class="column is-8 is-offset-2">
+            <h3 class="title">About Me</h3>
+            <p>
+              Hi, I'm Alessandro, an italian developer and lifelong learner
+              currently living in Milan. I help people interact with complex
+              data. When I am not building awesome stuff at
+              <a href="https://www.subito.it/">Subito</a>, I like to read, pet
+              my
+              <a href="https://twitter.com/acifani_/status/949351976625758210"
+                >beautiful cat</a
+              >
+              and give back to the open source community. Want to talk? I’d love
+              to hear from you.
+            </p>
+            <br />
+            <p>
+              <a href="mailto:alessandro.cifani@gmail.com">Email</a> &middot;
+              <a href="https://github.com/acifani">GitHub</a> &middot;
+              <a href="https://twitter.com/acifani_">Twitter</a> &middot;
+              <a href="https://www.linkedin.com/in/alessandrocifani/"
+                >LinkedIn</a
+              >
             </p>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="columns is-desktop">
-        <div class="column is-8 is-offset-2">
-          <h3 class="title">Open Source Projects</h3>
-          <div class="columns is-multiline">
-            <div class="column is-half">
-              <article class="card">
-                <div class="card-content">
-                  <h4 class="title is-6">⚗️ Flask-SQLA2Api</h4>
-                  <div class="tags">
-                    <span class="tag">python</span>
-                    <span class="tag">flask</span>
-                    <span class="tag">rest</span>
-                    <span class="tag">library</span>
-                  </div>
-                  <p>
-                    Flask middleware that automagically generates REST APIs given a SQLAlchemy model
-                  </p>
-                </div>
-                <div class="card-footer">
-                  <div class="card-footer-item">
-                    <a href="https://github.com/acifani/flask-sqla2api">GitHub</a>
-                  </div>
-                  <div class="card-footer-item">
-                    <a href="https://pypi.python.org/pypi/Flask-SQLA2api">PyPi</a>
-                  </div>
-                </div>
-              </article>
-            </div>
-            <div class="column is-half">
-              <article class="card">
-                <div class="card-content">
-                  <h4 class="title is-6">⚽ soccer-go</h4>
-                  <div class="tags">
-                    <span class="tag">typescript</span>
-                    <span class="tag">nodejs</span>
-                    <span class="tag">cli</span>
-                    <span class="tag">soccer</span>
-                  </div>
-                  <p>
-                    CLI app to follow your favourite european soccer league. Teams, players, results and more
-                  </p>
-                </div>
-                <div class="card-footer">
-                  <div class="card-footer-item">
-                    <a href="https://github.com/acifani/soccer-go">GitHub</a>
-                  </div>
-                  <div class="card-footer-item">
-                    <a href="https://www.npmjs.com/package/soccer-go">npm</a>
-                  </div>
-                  <div class="card-footer-item">
-                    <a href="https://aur.archlinux.org/packages/nodejs-soccer-go/">AUR</a>
-                  </div>
-                </div>
-              </article>
-            </div>
-            <div class="column is-half">
-              <article class="card">
-                <div class="card-content">
-                  <h4 class="title is-6">📬 update-notipy</h4>
-                  <div class="tags">
-                    <span class="tag">python</span>
-                    <span class="tag">library</span>
-                    <span class="tag">cli</span>
-                  </div>
-                  <p>
-                    Send a notification when there is an update available for your package
-                  </p>
-                </div>
-                <div class="card-footer">
-                  <div class="card-footer-item">
-                    <a href="https://github.com/acifani/update-notipy">GitHub</a>
-                  </div>
-                  <div class="card-footer-item">
-                    <a href="https://pypi.org/project/update-notipy/">PyPi</a>
-                  </div>
-                </div>
-              </article>
-            </div>
-            <div class="column is-half">
-              <article class="card">
-                <div class="card-content">
-                  <h4 class="title is-6">🚌 aspettami-bot</h4>
-                  <div class="tags">
-                    <span class="tag">python</span>
-                    <span class="tag">bot</span>
-                    <span class="tag">telegram</span>
-                    <span class="tag">transportation</span>
-                  </div>
-                  <p>
-                    Telegram bot to fetch real-time status and wait time of Milan's ATM bus and tram lines
-                  </p>
-                </div>
-                <div class="card-footer">
-                  <div class="card-footer-item">
-                    <a href="https://github.com/acifani/aspettami-bot">GitHub</a>
-                  </div>
-                  <div class="card-footer-item">
-                    <a href="https://t.me/aspettaMI_bot">Telegram</a>
-                  </div>
-                </div>
-              </article>
-            </div>
-            <div class="column is-half">
-              <article class="card">
-                <div class="card-content">
-                  <h4 class="title is-6">💱 node-currency-converter</h4>
-                  <div class="tags">
-                    <span class="tag">typescript</span>
-                    <span class="tag">nodejs</span>
-                    <span class="tag">currency</span>
-                    <span class="tag">docker</span>
-                  </div>
-                  <p>Node server for currency conversion</p>
-                </div>
-                <div class="card-footer">
-                  <div class="card-footer-item">
-                    <a href="https://github.com/acifani/node-currency-converter">GitHub</a>
-                  </div>
-                  <div class="card-footer-item">
-                    <a href="https://node-currency-converter.herokuapp.com/convert?amount=120&src_currency=EUR&dest_currency=USD">Demo</a>
-                  </div>
-                </div>
-              </article>
-            </div>
-            <div class="column is-half">
-              <article class="card">
-                <div class="card-content">
-                  <h4 class="title is-6">🥒 cetriolino</h4>
-                  <div class="tags">
-                    <span class="tag">typescript</span>
-                    <span class="tag">library</span>
-                    <span class="tag">key-value</span>
-                    <span class="tag">storage</span>
-                  </div>
-                  <p>Simple key-value storage</p>
-                </div>
-                <div class="card-footer">
-                  <div class="card-footer-item">
-                    <a href="https://github.com/acifani/cetriolino">GitHub</a>
-                  </div>
-                  <div class="card-footer-item">
-                    <a href="https://www.npmjs.com/package/cetriolino">npm</a>
-                  </div>
-                  <div class="card-footer-item">
-                    <a href="https://alessandrocifani.com/cetriolino/">Docs</a>
-                  </div>
-                </div>
-              </article>
-            </div>
-            <div class="column is-full">
-              <p>
-                More projects available on my
-                <a href="https://github.com/acifani?tab=repositories">GitHub</a> profile.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="columns is-desktop">
-        <div class="column is-8 is-offset-2">
-          <h3 class="title">About Me</h3>
-          <p>
-            Hi, I'm Alessandro, an italian developer and lifelong learner currently living in Milan.
-            I help people interact with complex data. When I am not building awesome stuff at
-            <a href="https://www.subito.it/">Subito</a>, I like to read, pet my
-            <a href="https://twitter.com/acifani_/status/949351976625758210">beautiful cat</a>
-            and give back to the open source community. Want to talk? I’d love to hear from you.
-          </p>
-          <br />
-          <p>
-            <a href="mailto:alessandro.cifani@gmail.com">Email</a> &middot;
-            <a href="https://github.com/acifani">GitHub</a> &middot;
-            <a href="https://twitter.com/acifani_">Twitter</a> &middot;
-            <a href="https://www.linkedin.com/in/alessandrocifani/">LinkedIn</a>
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-</body>
-
+    </section>
+    <noscript>
+      <link rel="stylesheet" href="/bulma-v0.8.2.01e58708.css"
+    /></noscript>
+  </body>
 </html>
