@@ -1,0 +1,21 @@
+{
+  "name": "acifani.github.com",
+  "version": "1.0.0",
+  "description": "Personal website at https://alessandrocifani.com/",
+  "scripts": {
+    "build": "html-minifier-terser --collapse-whitespace --remove-comments --minify-css true -o index.html index.template.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/acifani/acifani.github.com.git"
+  },
+  "author": "Alessandro Cifani <alessandro.cifani@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/acifani/acifani.github.com/issues"
+  },
+  "homepage": "https://github.com/acifani/acifani.github.com#readme",
+  "devDependencies": {
+    "html-minifier-terser": "^7.0.0"
+  }
+}
