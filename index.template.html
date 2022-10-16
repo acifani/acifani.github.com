@@ -28,14 +28,19 @@
   </script>
   <style>
     :root {
-      --foreground-color: #000;
-      --background-color: #fff;
-      --gold: rgb(229, 170, 0);
+      --primary-color: #000;
+      --highlight-color: #fff;
+      --background-color: var(--gold);
+      --gold: hsl(44.72 100% 44.48%);
+      --green: hsl(166.6 100% 37.72%);
+      --blue: hsl(191.4 100% 45.65%);
     }
 
     @supports (color: color(display-p3 0 0 0)) {
       :root {
         --gold: color(display-p3 0.91 0.686 0.123);
+        --green: color(display-p3 0 0.795 0.585);
+        --blue: color(display-p3 0 0.767 1);
       }
     }
 
@@ -48,8 +53,9 @@
       font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
         Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
         sans-serif;
-      color: var(--foreground-color);
-      background-color: var(--gold);
+      color: var(--primary-color);
+      background-color: var(--background-color);
+      accent-color: var(--primary-color);
       max-width: 980px;
       margin: auto;
       font-size: 1.2rem;
@@ -62,12 +68,12 @@
     }
 
     a {
-      color: var(--foreground-color);
+      color: var(--primary-color);
     }
 
     a:hover,
     a:focus {
-      color: var(--background-color);
+      color: var(--highlight-color);
     }
 
     h1 {
@@ -106,13 +112,46 @@
     article {
       flex: 1 1 auto;
       padding: 0.5rem 1rem;
-      border: 2px solid var(--foreground-color);
+      border: 2px solid var(--primary-color);
       width: 40%;
     }
 
     article p,
     article h3 {
       margin: 0.5rem 0;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    fieldset {
+      border: 0;
+      margin: 0;
+      padding: 0;
+      font-weight: 500;
+      display: flex;
+      gap: 1rem;
+    }
+
+    fieldset label {
+      display: inline-flex;
+      align-items: center;
+    }
+
+    body:has(.gold:checked) {
+      --background-color: var(--gold);
+    }
+
+    body:has(.green:checked) {
+      --background-color: var(--green);
+    }
+
+    body:has(.blue:checked) {
+      --background-color: var(--blue);
     }
 
   </style>
@@ -191,15 +230,28 @@
       <a href="https://twitter.com/acifani_/status/949351976625758210">beautiful cat</a>.
       Want to talk? I'd love to hear from you.
     </p>
-    <p>
-      <a href="mailto:alessandro.cifani@gmail.com">Email</a>
-      &middot;
-      <a href="https://github.com/acifani">GitHub</a>
-      &middot;
-      <a href="https://twitter.com/acifani_">Twitter</a>
-      &middot;
-      <a href="https://www.linkedin.com/in/alessandrocifani/">LinkedIn</a>
-    </p>
+    <div class="links">
+      <p>
+        <a href="mailto:alessandro.cifani@gmail.com">Email</a>
+        &middot;
+        <a href="https://github.com/acifani">GitHub</a>
+        &middot;
+        <a href="https://twitter.com/acifani_">Twitter</a>
+        &middot;
+        <a href="https://www.linkedin.com/in/alessandrocifani/">LinkedIn</a>
+      </p>
+      <fieldset>
+        <label>
+          <input type="radio" name="theme" class="gold" checked>Gold
+        </label>
+        <label>
+          <input type="radio" name="theme" class="green">Green
+        </label>
+        <label>
+          <input type="radio" name="theme" class="blue">Blue
+        </label>
+      </fieldset>
+    </div>
   </section>
 </body>
 
