@@ -28,20 +28,24 @@
   </script>
   <style>
     :root {
-      --primary-color: #000;
-      --highlight-color: #fff;
-      --background-color: var(--gold);
-      --gold: hsl(44.72 100% 44.48%);
-      --green: hsl(166.6 100% 37.72%);
-      --blue: hsl(191.4 100% 45.65%);
+      --primary-color: #1a1a1a;
+      --secondary-color: #bcb0b0;
+      --background-color: #fefefe;
+      --accent-color: hsl(var(--accent-hsl));
+      --highlight-color: hsl(var(--accent-hsl) 20%);
+      --accent-hsl: 349 100% 59%;
+      --accent-p3: 90% 0% 15%;
     }
 
     @supports (color: color(display-p3 0 0 0)) {
       :root {
-        --gold: color(display-p3 0.91 0.686 0.123);
-        --green: color(display-p3 0 0.795 0.585);
-        --blue: color(display-p3 0 0.767 1);
+        --accent-color: color(display-p3 var(--accent-p3));
+        --highlight-color: color(display-p3 var(--accent-p3) / 10%);
       }
+    }
+
+    ::selection {
+      background-color: var(--highlight-color);
     }
 
     html {
@@ -73,7 +77,7 @@
 
     a:hover,
     a:focus {
-      color: var(--highlight-color);
+      color: var(--accent-color);
     }
 
     h1 {
@@ -91,80 +95,65 @@
       font-weight: 700;
     }
 
-    .spacer {
-      height: 4rem;
-      width: 100%;
-      background-image: repeating-linear-gradient(-45deg,
-          transparent,
-          transparent 8px,
-          currentcolor 8px,
-          currentcolor 10px);
-    }
-
     .cards {
       display: flex;
-      flex-direction: row;
       flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 1rem;
     }
 
     article {
-      flex: 1 1 auto;
+      flex: 1 0 auto;
       padding: 0.5rem 1rem;
-      border: 2px solid var(--primary-color);
+      border: 1px solid var(--secondary-color);
+      min-width: 250px;
       width: 40%;
+      margin-right: -1px;
+      margin-bottom: -1px;
     }
 
     article p,
     article h3 {
       margin: 0.5rem 0;
     }
-
-    .links {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    fieldset {
-      border: 0;
-      margin: 0;
-      padding: 0;
-      font-weight: 500;
-      display: flex;
-      gap: 1rem;
-    }
-
-    fieldset label {
-      display: inline-flex;
-      align-items: center;
-    }
-
-    body:has(.gold:checked) {
-      --background-color: var(--gold);
-    }
-
-    body:has(.green:checked) {
-      --background-color: var(--green);
-    }
-
-    body:has(.blue:checked) {
-      --background-color: var(--blue);
-    }
-
   </style>
 </head>
 
 <body>
   <h1>Hi 👋 I'm Alessandro Cifani</h1>
-  <div class="spacer"></div>
+  <section>
+    <p>
+      Hi, I'm Alessandro, an Italian software developer passionate about web performance,
+      accessibility, and developer experience. When I am not
+      building awesome stuff at <a href="https://www.subito.it/" target="_blank">Subito</a>,
+      I'm probably reading or petting my
+      <a href="https://twitter.com/acifani_/status/949351976625758210" target="_blank">beautiful cat</a>.
+      Want to talk? I'd love to hear from you.
+    </p>
+    <p>
+      <a href="mailto:alessandro.cifani@gmail.com">Email</a>
+      &middot;
+      <a href="https://github.com/acifani" target="_blank">GitHub</a>
+      &middot;
+      <a href="https://twitter.com/acifani_" target="_blank">Twitter</a>
+      &middot;
+      <a href="https://www.linkedin.com/in/alessandrocifani/" target="_blank">LinkedIn</a>
+    </p>
+  </section>
   <section>
     <h2>Projects</h2>
     <div class="cards">
       <article>
-        <h3><a href="https://github.com/acifani/soccer-go">soccer-go</a></h3>
+        <h3>
+          <a href="https://costietf.it" target="_blank">
+            costietf.it
+          </a>
+        </h3>
+        <p>
+          Compare fees to buy ETFs in italian and european exchanges
+        </p>
+      </article>
+
+      <article>
+        <h3><a href="https://github.com/acifani/soccer-go" target="_blank">soccer-go</a></h3>
         <p>
           CLI app to follow your favourite european soccer league. Teams,
           players, results and more
@@ -173,19 +162,7 @@
 
       <article>
         <h3>
-          <a href="https://github.com/acifani/flask-sqla2api">
-            flask-sqla2api
-          </a>
-        </h3>
-        <p>
-          Flask middleware that automagically generates REST APIs given a
-          SQLAlchemy model
-        </p>
-      </article>
-
-      <article>
-        <h3>
-          <a href="https://github.com/acifani/turborepo-s3-remote-cache">
+          <a href="https://github.com/acifani/turborepo-s3-remote-cache" target="_blank">
             turborepo-s3-remote-cache
           </a>
         </h3>
@@ -194,7 +171,7 @@
 
       <article>
         <h3>
-          <a href="https://github.com/acifani/aspettami-bot">aspettami-bot</a>
+          <a href="https://github.com/acifani/aspettami-bot" target="_blank">aspettami-bot</a>
         </h3>
         <p>
           Telegram bot to fetch real-time status and wait time of Milan's ATM
@@ -203,55 +180,35 @@
       </article>
 
       <article>
-        <h3><a href="https://github.com/acifani/vita">vita</a></h3>
+        <h3><a href="https://github.com/acifani/vita" target="_blank">vita</a></h3>
         <p>Game of Life in WebAssembly+Go</p>
       </article>
 
       <article>
         <h3>
-          <a href="https://github.com/acifani/setup-tinygo">setup-tinygo</a>
+          <a href="https://github.com/acifani/setup-tinygo" target="_blank">setup-tinygo</a>
         </h3>
         <p>GitHub action to setup a TinyGo environment</p>
       </article>
     </div>
-    <p>
-      More projects available on my
-      <a href="https://github.com/acifani?tab=repositories">GitHub</a>
-      profile.
-    </p>
   </section>
   <section>
-    <h2>About</h2>
+    <h2>Talks & collabs</h2>
     <p>
-      Hi, I'm Alessandro, an Italian software developer passionate about web performance,
-      accessibility, and developer experience. When I am not
-      building awesome stuff at <a href="https://www.subito.it/">Subito</a>,
-      I'm probably reading or petting my
-      <a href="https://twitter.com/acifani_/status/949351976625758210">beautiful cat</a>.
-      Want to talk? I'd love to hear from you.
+      I shared how Subito's JS monorepo works at reactjsday 2022 -
+      <a href="https://youtu.be/yzrx2vUVfN4" target="_blank"><i>"Subito's journey to a scalable monorepo"</i></a>.
     </p>
-    <div class="links">
-      <p>
-        <a href="mailto:alessandro.cifani@gmail.com">Email</a>
-        &middot;
-        <a href="https://github.com/acifani">GitHub</a>
-        &middot;
-        <a href="https://twitter.com/acifani_">Twitter</a>
-        &middot;
-        <a href="https://www.linkedin.com/in/alessandrocifani/">LinkedIn</a>
-      </p>
-      <fieldset>
-        <label>
-          <input type="radio" name="theme" class="gold" checked>Gold
-        </label>
-        <label>
-          <input type="radio" name="theme" class="green">Green
-        </label>
-        <label>
-          <input type="radio" name="theme" class="blue">Blue
-        </label>
-      </fieldset>
-    </div>
+    <p>
+      Mr. Rip, one of Italy's top tech/finance creators, featured
+      <a href="https://costietf.it" target="_blank">costietf.it</a> in
+      <a href="https://youtu.be/fTF3Ifj6Q9s" target="_blank">this brief overview</a>.
+    </p>
+    <p>
+      vita is used in <a href="https://github.com/deadprogram/cloudlife" target="_blank">Cloudlife</a>, and shown in the
+      2024 GoLab
+      talk <a href="https://youtu.be/GkS7iLYcRsM" target="_blank"><i>"Life, the Universe, and everything GO"</i></a> by
+      Ron Evans.
+    </p>
   </section>
 </body>
 
