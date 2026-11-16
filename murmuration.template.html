@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description"
+    content="Alessandro Cifani, engineering manager at TeamSystem. I help teams do good work, and I still like building small things." />
+  <meta name="theme-color" content="#f4f0e8" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0e1118" media="(prefers-color-scheme: dark)" />
+  <title>Alessandro Cifani</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&display=swap"
+    rel="stylesheet" />
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "name": "Alessandro Cifani",
+      "url": "https://alessandrocifani.com",
+      "email": "alessandro.cifani@gmail.com",
+      "jobTitle": "Engineering Manager",
+      "worksFor": { "@type": "Organization", "name": "TeamSystem" },
+      "alumniOf": "Università di Camerino",
+      "image": "https://www.gravatar.com/avatar/b74ceb43f57ee68b44ac1969fe5a38cc?s=500",
+      "sameAs": [
+        "https://github.com/acifani",
+        "https://www.linkedin.com/in/alessandrocifani"
+      ]
+    }
+  </script>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --paper: #f4f0e8;
+      --paper-warm: #efe2d0;
+      --ink: #23211d;
+      --muted: #6b655c;
+      --rule: rgb(35 33 29 / 14%);
+      --accent: #a9502f;
+      --highlight: rgb(184 90 58 / 18%);
+      --hill-far: #e4d8c5;
+      --hill-mid: #d9c8af;
+      --ground: #cdbb9f;
+      --ground-ink: #4e463b;
+      --glow: #eeb183;
+      --glow-opacity: 0.75;
+      --line: #4a4238;
+      --grain-opacity: 0.07;
+      --grain-blend: multiply;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --paper: #0e1118;
+        --paper-warm: #221d27;
+        --ink: #ece6da;
+        --muted: #a29b8f;
+        --rule: rgb(236 230 218 / 14%);
+        --accent: #e7926c;
+        --highlight: rgb(231 146 108 / 25%);
+        --hill-far: #262634;
+        --hill-mid: #1c1c27;
+        --ground: #14141c;
+        --ground-ink: #a29b8f;
+        --glow: #c4684a;
+        --glow-opacity: 0.5;
+        --line: #d8cfbf;
+        --grain-opacity: 0.05;
+        --grain-blend: soft-light;
+      }
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    ::selection {
+      background-color: var(--highlight);
+    }
+
+    html {
+      font-size: 16px;
+      background: var(--paper);
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+        sans-serif;
+      font-size: 1.0625rem;
+      line-height: 1.65;
+      color: var(--ink);
+      background: linear-gradient(to bottom, var(--paper) 0%, var(--paper) 45%, var(--paper-warm) 100%);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Sky: a murmuration */
+    #sky {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* Paper grain */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      opacity: var(--grain-opacity);
+      mix-blend-mode: var(--grain-blend);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.5 0 0 0 0 0.45 0 0 0 0 0.4 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    main,
+    footer {
+      position: relative;
+      z-index: 2;
+    }
+
+    main {
+      flex: 1 0 auto;
+      width: 100%;
+      max-width: 44rem;
+      margin: 0 auto;
+      padding: clamp(4rem, 14vh, 9rem) 1.5rem 4rem;
+    }
+
+    h1,
+    h2,
+    h3,
+    .lead {
+      font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+      font-optical-sizing: auto;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 7vw, 3.6rem);
+      line-height: 1.05;
+      margin: 0 0 2rem;
+      font-weight: 350;
+    }
+
+    h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    h2 {
+      font-size: 0.8rem;
+      font-family: inherit;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+      font-weight: 500;
+      margin: 0 0 1.25rem;
+    }
+
+    h3 {
+      font-size: 1.3rem;
+      line-height: 1.3;
+      margin: 0 0 0.35rem;
+    }
+
+    p {
+      margin: 0 0 1.1rem;
+    }
+
+    .lead {
+      font-size: clamp(1.25rem, 3.2vw, 1.45rem);
+      line-height: 1.5;
+      font-weight: 350;
+    }
+
+    a {
+      color: inherit;
+      text-decoration-color: var(--rule);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.2em;
+      transition: color 0.2s, text-decoration-color 0.2s;
+    }
+
+    a:hover,
+    a:focus-visible {
+      color: var(--accent);
+      text-decoration-color: currentColor;
+    }
+
+    a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.25rem 1.5rem;
+      margin-top: 1.75rem;
+      font-size: 0.95rem;
+    }
+
+    section {
+      margin-top: 4.5rem;
+    }
+
+    .things {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .things li {
+      padding: 1.25rem 0;
+      border-top: 1px solid var(--rule);
+    }
+
+    .things li:last-child {
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .things h3 a {
+      text-decoration: none;
+    }
+
+    .things p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .things .meta {
+      font-size: 0.85rem;
+      margin-top: 0.4rem;
+      letter-spacing: 0.02em;
+    }
+
+    .elsewhere p {
+      color: var(--muted);
+    }
+
+    .elsewhere a {
+      color: var(--ink);
+    }
+
+    .elsewhere a:hover {
+      color: var(--accent);
+    }
+
+    /* Horizon */
+    footer {
+      margin-top: 2rem;
+    }
+
+    .horizon {
+      display: block;
+      width: 100%;
+      height: clamp(230px, 36vh, 400px);
+    }
+
+    .horizon .glow {
+      fill: url(#glow);
+      opacity: var(--glow-opacity);
+    }
+
+    .horizon .glow-stop {
+      stop-color: var(--glow);
+    }
+
+    .horizon .far {
+      fill: var(--hill-far);
+    }
+
+    .horizon .mid {
+      fill: var(--hill-mid);
+    }
+
+    .horizon .near {
+      fill: var(--ground);
+    }
+
+    .horizon .ink {
+      fill: none;
+      stroke: var(--line);
+      stroke-width: 1.3;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      opacity: 0.55;
+    }
+
+    .horizon .people {
+      fill: none;
+      stroke: var(--line);
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      opacity: 0.85;
+    }
+
+    .footnote {
+      background: var(--ground);
+      color: var(--ground-ink);
+      margin: -1px 0 0;
+      padding: 0 1.5rem 1.75rem;
+      text-align: center;
+      font-size: 0.8rem;
+      letter-spacing: 0.02em;
+    }
+
+    .footnote a {
+      color: inherit;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="sky" aria-hidden="true"></canvas>
+
+  <main>
+    <h1>Hi, I'm <em>Alessandro</em>.</h1>
+
+    <p class="lead">
+      I'm an engineering manager at TeamSystem, working with the teams that make software
+      for restaurants and hotels, wellness centres, associations and condominiums:
+      ordinary places where people spend a good part of their lives.
+    </p>
+    <p>
+      Most of my work is about people now. I help teams find a way of working that suits
+      them, untangle the systems around them, and keep in mind who will actually use what we make.
+    </p>
+    <p>
+      I still build things on the side: small tools for my own life, and little simulations
+      where a few simple rules turn into something that seems alive. When I'm not doing that,
+      I'm probably reading, or keeping my
+      <a href="https://twitter.com/acifani_/status/949351976625758210" target="_blank" rel="noopener">cat</a>
+      company.
+    </p>
+    <p>If any of this resonates, I'd love to hear from you.</p>
+
+    <nav class="links" aria-label="Contact">
+      <a href="mailto:alessandro.cifani@gmail.com">Email</a>
+      <a href="https://github.com/acifani" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/alessandrocifani/" target="_blank" rel="noopener">LinkedIn</a>
+    </nav>
+
+    <section aria-labelledby="things">
+      <h2 id="things">Things I've made</h2>
+      <ul class="things">
+        <li>
+          <h3><a href="https://github.com/acifani/vita" target="_blank" rel="noopener">vita</a></h3>
+          <p>
+            Conway's Game of Life in Go and WebAssembly. It found a second life inside
+            <a href="https://github.com/deadprogram/cloudlife" target="_blank" rel="noopener">Cloudlife</a>,
+            and was shown in Ron Evans' GoLab 2024 talk
+            <a href="https://youtu.be/GkS7iLYcRsM" target="_blank" rel="noopener"><i>Life, the Universe, and everything GO</i></a>.
+          </p>
+        </li>
+        <li>
+          <h3><a href="https://costietf.it" target="_blank" rel="noopener">costietf.it</a></h3>
+          <p>
+            What it really costs to buy ETFs through Italian and European brokers. Mr. Rip featured it in
+            <a href="https://youtu.be/fTF3Ifj6Q9s" target="_blank" rel="noopener">one of his videos</a>.
+          </p>
+        </li>
+        <li>
+          <h3>
+            <a href="https://github.com/acifani/soccer-go" target="_blank" rel="noopener">soccer-go</a>
+            &amp;
+            <a href="https://github.com/acifani/formula1-go" target="_blank" rel="noopener">formula1-go</a>
+          </h3>
+          <p>Follow European football and Formula 1 from the terminal: results, standings, teams and drivers.</p>
+        </li>
+        <li>
+          <h3><a href="https://github.com/acifani/setup-tinygo" target="_blank" rel="noopener">setup-tinygo</a></h3>
+          <p>A small GitHub Action that sets up TinyGo, so Go for tiny places can be tested in CI.</p>
+        </li>
+        <li>
+          <h3>Tools for Actual</h3>
+          <p>
+            Little helpers around the budgeting app I use every day:
+            <a href="https://github.com/acifani/fineco-to-actual" target="_blank" rel="noopener">importing bank movements</a>,
+            <a href="https://github.com/acifani/actual-jev" target="_blank" rel="noopener">categorising transactions</a>,
+            and <a href="https://github.com/acifani/actual-rest-api" target="_blank" rel="noopener">an HTTP API</a>.
+          </p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="elsewhere" aria-labelledby="elsewhere">
+      <h2 id="elsewhere">Elsewhere</h2>
+      <p>
+        At reactjsday 2022 I told the story of
+        <a href="https://youtu.be/yzrx2vUVfN4" target="_blank" rel="noopener"><i>Subito's journey to a scalable monorepo</i></a>.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <svg class="horizon" viewBox="0 0 1600 360" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+      <defs>
+        <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+          <stop offset="0" class="glow-stop" />
+          <stop offset="0.55" class="glow-stop" style="stop-opacity:.35" />
+          <stop offset="1" class="glow-stop" style="stop-opacity:0" />
+        </radialGradient>
+        <filter id="ink" x="-5%" y="-20%" width="110%" height="140%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="7" />
+          <feDisplacementMap in="SourceGraphic" scale="3.5" />
+        </filter>
+      </defs>
+
+      <ellipse class="glow" cx="1000" cy="296" rx="780" ry="200" />
+
+      <path class="far"
+        d="M0 236 C 160 200, 330 206, 470 224 C 620 244, 760 214, 900 204 C 1060 192, 1200 222, 1340 226 C 1460 229, 1540 214, 1600 210 L1600 360 L0 360 Z" />
+      <path class="mid"
+        d="M0 268 C 140 252, 300 246, 460 262 C 600 276, 760 268, 880 256 C 980 246, 1080 252, 1200 262 C 1340 274, 1480 254, 1600 250 L1600 360 L0 360 Z" />
+      <path class="near"
+        d="M0 312 C 160 292, 340 284, 520 296 C 680 306, 860 296, 1006 291 C 1120 288, 1240 302, 1380 300 C 1480 298, 1550 292, 1600 290 L1600 360 L0 360 Z" />
+
+      <g filter="url(#ink)">
+        <path class="ink" d="M20 309.6 C 170 291, 340 284, 505 295" />
+        <path class="ink" d="M560 298.7 C 700 305.5, 870 296, 990 291.4" />
+        <path class="ink" d="M1024 290.6 C 1120 288, 1240 302, 1365 300.2" />
+        <path class="ink" d="M1420 299.2 C 1495 297.6, 1550 292, 1592 290.2" />
+        <path class="ink" style="opacity:.3" d="M90 256.5 C 200 248, 330 247, 440 259" />
+        <path class="ink" style="opacity:.3" d="M840 259.5 C 920 251, 1000 246, 1090 253" />
+        <path class="ink" style="opacity:.22" d="M150 205 C 280 202, 380 212, 460 222.5" />
+        <path class="ink" style="opacity:.22" d="M960 198 C 1080 192, 1180 214, 1290 223.5" />
+      </g>
+
+      <!-- two people at the edge of the world, watching the flock -->
+      <g class="people">
+        <circle cx="997" cy="271.5" r="3" />
+        <path d="M997 275 L997.3 284.2 M997.3 284.2 L995.6 291 M997.3 284.2 L999 291 M997.1 277.6 L994.6 283.4 M997.1 277.6 L999.8 283" />
+        <circle cx="1010" cy="274" r="2.7" />
+        <path d="M1010 277.2 L1010.2 285.6 M1010.2 285.6 L1008.7 291 M1010.2 285.6 L1011.8 291 M1010.1 279.4 L1008 284.6 M1010.1 279.4 L1014.6 272.2" />
+      </g>
+    </svg>
+    <p class="footnote">No bird leads. Each one just watches its neighbours.</p>
+  </footer>
+
+  <script>
+    (function () {
+      var canvas = document.getElementById('sky');
+      var ctx = canvas.getContext && canvas.getContext('2d');
+      if (!ctx) return;
+
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+      var darkMq = window.matchMedia('(prefers-color-scheme: dark)');
+      // alignment, cohesion, separation, pull, jitter, max acceleration, individual share of the pull, flattening
+      var K = { al: 1.6, co: 0.4, se: 80, pu: 12, no: 16, am: 80, ind: 0.3, fl: 1 };
+      var MAX = 400, DT = 1 / 60, PAD = 160, R = 26, SEP = 13, DEPTH = 160;
+      var W = 0, H = 0, dpr = 1, n = 0, narrow = false, started = false;
+      // birds fly in a shallow volume; z is depth (towards the viewer is positive)
+      var x = new Float32Array(MAX), y = new Float32Array(MAX), z = new Float32Array(MAX);
+      var vx = new Float32Array(MAX), vy = new Float32Array(MAX), vz = new Float32Array(MAX);
+      var ax = new Float32Array(MAX), ay = new Float32Array(MAX), az = new Float32Array(MAX);
+      var size = new Float32Array(MAX), flap = new Float32Array(MAX), pw = new Float32Array(MAX);
+      var gc = 0, gr = 0, head, link = new Int32Array(MAX);
+      var t = 0, tx = 0, ty = 0, tz = 0, raf = 0, last = 0, acc = 0;
+      var side = 1, from = 1, moveAt = 0, nextMove = 0, CROSS = 26;
+      var vmin = 44, vmax = 58;
+
+      function wanted() {
+        var a = W * H;
+        return Math.round(narrow ? Math.max(110, Math.min(170, a / 2400)) : Math.max(220, Math.min(380, a / 3600)));
+      }
+
+      function smooth(u) { u = Math.max(0, Math.min(1, u)); return u * u * (3 - 2 * u); }
+
+      // Where the flock would like to be: circling in the margin beside the text,
+      // and every minute or two wheeling over the top of the page to the other side.
+      function target() {
+        var orbit = t * 0.21;
+        if (narrow) {
+          tx = W * (0.5 + 0.28 * Math.sin(t * 0.05)) + W * 0.12 * Math.cos(orbit);
+          ty = 60 + 10 * Math.sin(t * 0.09);
+          tz = DEPTH * 0.6 * Math.sin(orbit);
+          return;
+        }
+        if (t > nextMove) { from = side; side = -side; moveAt = t; nextMove = t + 50 + Math.random() * 60; }
+        var u = smooth((t - moveAt) / CROSS);
+        var s = from + (side - from) * u;
+        var half = Math.min(W, 704) / 2;
+        var margin = Math.max(W / 2 - half, 140);
+        var reach = Math.min(W / 2 - margin / 2, W / 2 - 80);
+        var crossing = 1 - s * s;
+        tx = W / 2 + s * reach + margin * 0.15 * Math.cos(orbit) * (1 - crossing);
+        ty = Math.max(96, H * (0.3 + 0.1 * Math.sin(t * 0.07)) - crossing * H * 0.24);
+        tz = DEPTH * 0.6 * Math.sin(orbit);
+      }
+
+      function spawn(i, cx, cy, cz, spread, hx, hy, hz) {
+        var a = Math.random() * 6.283, r = Math.sqrt(Math.random()) * spread;
+        x[i] = cx + Math.cos(a) * r * 1.4; y[i] = cy + Math.sin(a) * r * 0.7; z[i] = cz + (Math.random() - 0.5) * spread;
+        var sp = (vmin + vmax) / 2;
+        vx[i] = hx * sp; vy[i] = hy * sp; vz[i] = hz * sp;
+        size[i] = 0.85 + Math.random() * 0.3;
+        flap[i] = Math.random() * 6.283;
+        pw[i] = 0.6 + Math.random() * 0.8;
+      }
+
+      function populate() {
+        var want = wanted(), i;
+        if (!started) {
+          side = Math.random() < 0.5 ? -1 : 1; from = side; moveAt = -CROSS;
+          nextMove = 25 + Math.random() * 30;
+          target();
+          var h = Math.random() * 6.283;
+          for (i = 0; i < want; i++) spawn(i, tx, ty, tz, Math.sqrt(want) * 4, Math.cos(h), Math.sin(h) * 0.3, Math.sin(h));
+          started = true;
+        } else {
+          // newcomers join next to existing birds, so nothing jumps
+          var sp = (vmin + vmax) / 2;
+          for (i = n; i < want; i++) {
+            var k = Math.floor(Math.random() * n);
+            spawn(i, x[k], y[k], z[k], 6, vx[k] / sp, vy[k] / sp, vz[k] / sp);
+          }
+        }
+        n = want;
+      }
+
+      function grid() {
+        gc = Math.ceil((W + PAD * 2) / R); gr = Math.ceil((H + PAD * 2) / R);
+        head = new Int32Array(gc * gr);
+      }
+
+      function cell(v, max) { return Math.min(max - 1, Math.max(0, ((v + PAD) / R) | 0)); }
+
+      function step() {
+        t += DT;
+        target();
+        var i, j, c, R2 = R * R, S2 = SEP * SEP;
+        head.fill(-1);
+        for (i = 0; i < n; i++) { c = cell(y[i], gr) * gc + cell(x[i], gc); link[i] = head[c]; head[c] = i; }
+        var edge = narrow ? 30 : 50, top = 36, floor = narrow ? 100 : H * 0.7;
+        // the flock as a whole drifts towards the target: shared steering, so it guides without squeezing
+        var gx = 0, gy = 0, gz = 0;
+        for (i = 0; i < n; i++) { gx += x[i]; gy += y[i]; gz += z[i]; }
+        gx /= n; gy /= n; gz /= n;
+        // starlings flock in a loose sheet; as the sheet slowly turns, the cloud we see
+        // thins into a dark ribbon and opens out again
+        var na = t * 0.13 + 0.8 * Math.sin(t * 0.05), nb = 0.95 * Math.sin(t * 0.071);
+        var nx = Math.sin(na) * Math.cos(nb), ny = Math.sin(nb), nz = Math.cos(na) * Math.cos(nb);
+        var ccx = gx, ccy = gy, ccz = gz;
+        gx = tx - gx; gy = ty - gy; gz = tz - gz;
+        var pu = narrow ? K.pu * 2.5 : K.pu; // tighter turns where the sky is only a thin strip
+        var gd = Math.sqrt(gx * gx + gy * gy + gz * gz) + 1, gp = pu * (1 - K.ind) * (1 + gd / 250) / gd;
+        gx *= gp; gy *= gp; gz *= gp;
+        for (i = 0; i < n; i++) {
+          var xi = x[i], yi = y[i], zi = z[i];
+          var hv = Math.sqrt(vx[i] * vx[i] + vy[i] * vy[i] + vz[i] * vz[i]) || 1;
+          var hx = vx[i] / hv, hy = vy[i] / hv, hz = vz[i] / hv;
+          var cx = cell(xi, gc), cy = cell(yi, gr);
+          var cnt = 0, sx = 0, sy = 0, sz = 0, mx = 0, my = 0, mz = 0, px = 0, py = 0, pz = 0;
+          for (var oy = -1; oy <= 1; oy++) {
+            var ry = cy + oy; if (ry < 0 || ry >= gr) continue;
+            for (var ox = -1; ox <= 1; ox++) {
+              var rx = cx + ox; if (rx < 0 || rx >= gc) continue;
+              for (j = head[ry * gc + rx]; j !== -1; j = link[j]) {
+                if (j === i) continue;
+                var dx = x[j] - xi, dy = y[j] - yi, dz = z[j] - zi, d2 = dx * dx + dy * dy + dz * dz;
+                if (d2 > R2) continue;
+                if (d2 < S2) { var dd = Math.sqrt(d2) + 0.01, w = (SEP - dd) / (SEP * dd); sx -= dx * w; sy -= dy * w; sz -= dz * w; }
+                // nobody sees directly behind them
+                if (dx * hx + dy * hy + dz * hz < -0.5 * Math.sqrt(d2)) continue;
+                cnt++; mx += vx[j]; my += vy[j]; mz += vz[j]; px += dx; py += dy; pz += dz;
+              }
+            }
+          }
+          var fx = sx * K.se, fy = sy * K.se, fz = sz * K.se;
+          if (cnt) {
+            fx += (mx / cnt - vx[i]) * K.al + px / cnt * K.co;
+            fy += (my / cnt - vy[i]) * K.al + py / cnt * K.co;
+            fz += (mz / cnt - vz[i]) * K.al + pz / cnt * K.co;
+          }
+          // a gentle pull towards where the flock is headed; some feel it more than others
+          var dx2 = tx - xi, dy2 = ty - yi, dz2 = tz - zi;
+          var td = Math.sqrt(dx2 * dx2 + dy2 * dy2 + dz2 * dz2) + 1, pull = pu * K.ind * pw[i] * (1 + td / 250) / td;
+          fx += dx2 * pull + gx; fy += dy2 * pull + gy; fz += dz2 * pull + gz;
+          var off = ((xi - ccx) * nx + (yi - ccy) * ny + (zi - ccz) * nz) * K.fl + (vx[i] * nx + vy[i] * ny + vz[i] * nz) * K.fl;
+          fx -= nx * off; fy -= ny * off; fz -= nz * off;
+          fx += (Math.random() - 0.5) * K.no; fy += (Math.random() - 0.5) * K.no; fz += (Math.random() - 0.5) * K.no;
+          var fm = Math.sqrt(fx * fx + fy * fy + fz * fz);
+          if (fm > K.am) { fm = K.am / fm; fx *= fm; fy *= fm; fz *= fm; }
+          // soft walls
+          if (xi < edge) fx += (edge - xi) * 3; else if (xi > W - edge) fx -= (xi - W + edge) * 3;
+          if (yi < top) fy += (top - yi) * 3; else if (yi > floor) fy -= (yi - floor) * (narrow ? 4 : 1.5);
+          if (zi < -DEPTH) fz += (-DEPTH - zi) * 1.5; else if (zi > DEPTH) fz -= (zi - DEPTH) * 1.5;
+          ax[i] = fx; ay[i] = fy; az[i] = fz;
+        }
+        for (i = 0; i < n; i++) {
+          var nx = vx[i] + ax[i] * DT, ny = vy[i] + ay[i] * DT, nz = vz[i] + az[i] * DT;
+          var sp = Math.sqrt(nx * nx + ny * ny + nz * nz) || 1;
+          var k = sp > vmax ? vmax / sp : sp < vmin ? vmin / sp : 1;
+          vx[i] = nx * k; vy[i] = ny * k; vz[i] = nz * k;
+          x[i] += vx[i] * DT; y[i] += vy[i] * DT; z[i] += vz[i] * DT;
+          flap[i] += DT * 11;
+        }
+      }
+
+      function draw() {
+        var dark = darkMq.matches, still = reduce.matches;
+        ctx.clearRect(0, 0, W, H);
+        ctx.strokeStyle = dark ? 'rgb(236,230,218)' : 'rgb(35,33,29)';
+        ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+        var base = dark ? 0.68 : 0.6;
+        var half = Math.min(W, 704) / 2, l = W / 2 - half, r = W / 2 + half, soft = 70;
+        for (var i = 0; i < n; i++) {
+          var xi = x[i], yi = y[i];
+          if (xi < -10 || xi > W + 10 || yi < -10 || yi > H + 10) continue;
+          var fade = 1;
+          if (narrow) fade = 0.6 - 0.3 * Math.min(1, Math.max(0, (yi - 80) / 60));
+          else if (xi > l - soft && xi < r + soft) fade = 1 - Math.min(Math.min(xi - l + soft, r + soft - xi) / soft, 1) * 0.72;
+          fade *= 1 - Math.max(0, yi / H - 0.6) * 1.4;
+          var near = Math.max(0, Math.min(1, (z[i] + DEPTH) / (2 * DEPTH)));
+          var s = size[i] * (0.7 + 0.55 * near);
+          var a = base * fade * (0.4 + 0.6 * near);
+          if (a <= 0.02) continue;
+          var sp = Math.sqrt(vx[i] * vx[i] + vy[i] * vy[i] + vz[i] * vz[i]) || 1;
+          var ux = vx[i] / sp, uy = vy[i] / sp; // foreshortened when flying towards or away from us
+          var fl = Math.sqrt(ux * ux + uy * uy) || 1;
+          var len = 2.4 * s, wing = (1.3 + (still ? 0.25 : 0.4 * Math.sin(flap[i]))) * s;
+          var bx = xi - ux * len * 0.5, by = yi - uy * len * 0.5;
+          var wx = -uy / fl * wing, wy = ux / fl * wing;
+          ctx.globalAlpha = a;
+          ctx.lineWidth = 0.75 + 0.45 * s;
+          ctx.beginPath();
+          ctx.moveTo(bx + wx, by + wy);
+          ctx.lineTo(xi + ux * len * 0.5, yi + uy * len * 0.5);
+          ctx.lineTo(bx - wx, by - wy);
+          ctx.stroke();
+        }
+        ctx.globalAlpha = 1;
+      }
+
+      function resize() {
+        dpr = Math.min(window.devicePixelRatio || 1, 2);
+        W = window.innerWidth; H = window.innerHeight;
+        narrow = W < 720;
+        vmax = narrow ? 36 : 58; vmin = vmax * 0.78;
+        SEP = narrow ? 10 : 13; R = narrow ? 22 : 26;
+        canvas.width = Math.round(W * dpr); canvas.height = Math.round(H * dpr);
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        grid();
+        var first = !started;
+        populate();
+        // let the flock settle before anyone sees it
+        if (first) for (var k = 0; k < (reduce.matches ? 1200 : 360); k++) step();
+        draw();
+      }
+
+      function frame(now) {
+        raf = 0;
+        acc += last ? Math.min((now - last) / 1000, 0.1) : DT;
+        last = now;
+        while (acc >= DT) { step(); acc -= DT; }
+        draw();
+        schedule();
+      }
+
+      function schedule() {
+        if (raf || reduce.matches || document.hidden) { last = 0; return; }
+        raf = requestAnimationFrame(frame);
+      }
+
+      function onPrefChange() {
+        if (reduce.matches && raf) { cancelAnimationFrame(raf); raf = 0; }
+        draw();
+        schedule();
+      }
+
+      window.addEventListener('resize', resize);
+      document.addEventListener('visibilitychange', schedule);
+      (reduce.addEventListener ? reduce.addEventListener('change', onPrefChange) : reduce.addListener(onPrefChange));
+      (darkMq.addEventListener ? darkMq.addEventListener('change', onPrefChange) : darkMq.addListener(onPrefChange));
+      resize();
+      schedule();
+    })();
+  </script>
+</body>
+
+</html>

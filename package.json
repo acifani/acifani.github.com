@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Personal website at https://alessandrocifani.com/",
   "scripts": {
-    "build": "html-minifier-terser --collapse-whitespace --remove-comments --minify-css true -o index.html index.template.html"
+    "build": "html-minifier-terser --collapse-whitespace --remove-comments --minify-css true -o index.html index.template.html && html-minifier-terser --collapse-whitespace --remove-comments --minify-css true -o murmuration.html murmuration.template.html"
   },
   "repository": {
     "type": "git",
